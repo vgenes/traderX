@@ -74,10 +74,12 @@ export class PositionBlotterComponent implements OnChanges, OnDestroy {
     const row = this.gridApi.getRowNode(data.security);
     let positionData;
     if (row) {
+      const currentQuantity = row.data.quantity || 0;
+      const newQuantity = currentQuantity + data.quantity;
       positionData = {
-        update: [Object.assign(row.data, { quantity: data.quantity })]
+        update: [Object.assign(row.data, { quantity: newQuantity })]
       };
-    } else {
+    }else {
       positionData = {
         add: [{
           accountid: data.accountid,
