@@ -1,0 +1,34 @@
+{
+  "name": "@finos/js-to-ts-migration",
+  "version": "1.0.0",
+  "description": "CLI tool to migrate JavaScript files to TypeScript",
+  "main": "dist/index.js",
+  "bin": {
+    "js-to-ts": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "migration",
+    "converter"
+  ],
+  "author": "FINOS",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "glob": "^10.3.10",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2"
+  }
+}
